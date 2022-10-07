@@ -1,6 +1,7 @@
 package C2_UD09_04;
 
 public class Raices implements SegundoGrado {
+	
 	private double a;
 	private double b;
 	private double c;
@@ -9,28 +10,29 @@ public class Raices implements SegundoGrado {
      * Asigna 0 a los atributos
      * a, b y c
      */
-    public Raices() {
-        this.a = 0;
-        this.b = 0;
-        this.c = 0;
-    }
+    	public Raices() {
+        	this.a = 0;
+        	this.b = 0;
+        	this.c = 0;
+    	}
     /**
      * Constructor 2
      * @param a 
      * @param b
      * @param c
      */
-    public Raices(double a, double b, double c) {
-        this.a = a;
-        this.b = b;
-        this.c = c;
-    }
+    	public Raices(double a, double b, double c) {
+        	this.a = a;
+        	this.b = b;
+        	this.c = c;
+    	}
     /* Funciones y metodos de la aplicación */
 	public double getDiscriminate(){
 		
 		return ((b*b)-(4*a*c));
 		
 	};
+	
 	public boolean tieneRaices(){
 		return this.getDiscriminate()>0?true:false;
 	};
