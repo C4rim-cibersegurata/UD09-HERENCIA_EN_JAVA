@@ -27,8 +27,9 @@ public class Raices implements SegundoGrado {
     }
     /* Funciones y metodos de la aplicación */
 	public double getDiscriminate(){
-		Double discriminate = ((b*b)-(4*a*c));
-		return discriminate;
+		
+		return ((b*b)-(4*a*c));
+		
 	};
 	public boolean tieneRaices(){
 		return this.getDiscriminate()>0?true:false;
@@ -37,12 +38,11 @@ public class Raices implements SegundoGrado {
 		return this.getDiscriminate()==0?true:false;
 	};
 	public void calcular(){
-		if (this.tieneRaices()) {
-			  this.obtenerRaices();
-			}
-		else if (this.tieneRaiz()) {
-			  this.obtenerRaiz();
-			}
+		if (tieneRaices()) {
+			obtenerRaices();
+		} else if (tieneRaiz()) {
+			obtenerRaiz();
+		}
 		else {System.out.println("Esta ecuación no tiene soluciones reales");}
 	};
 	public void obtenerRaices(){
