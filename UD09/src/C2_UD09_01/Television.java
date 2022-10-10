@@ -44,8 +44,6 @@ public class Television extends Electrodomestico {
 
 	public void precioFinal() {
 		
-		
-		
 		if (resolution>40) {
 			
 			this.price*=1.3;
