@@ -50,24 +50,19 @@ public class MainApp02 {
 		}
 		System.out.println("Había "+cuenta+ " series y juegos entregados. Todos han sido devueltos\n");
 
-		
-		for (int i = 0; i < serie.length; i++) {
-			System.out.println("Serie: "+serie[i].toString());
-		}
-		
 				
+		//Ordenamos las series por temporadas y agarramos la que tiene más para mostrar su información
 		Arrays.sort(serie);
-		//Arrays.sort(videojuego);
-		for (int i = 0; i < serie.length; i++) {
-			System.out.println("Serie: "+serie[i].toString());
-		}
-		/*for(int i=0;i<5;i++) {
-			
-		}*/
+		int tamañoSerie=serie.length;
 
+		System.out.println("La serie con mas temporadas es "+serie[tamañoSerie-1].getTitulo()+".\n"+serie[tamañoSerie-1].toString());
 
+		//Ordenamos los videojuegos por horas estimadas y agarramos el que tiene más para mostrar su información
+		Arrays.sort(videojuego);
+		int horasVideojuego=videojuego.length;
 
-		//videojuego[].compareTo(videojuego[]);
+		System.out.println("El videojuego con mas horas es "+videojuego[horasVideojuego-1].getTitulo()+"\n"+videojuego[horasVideojuego-1].toString());
+		
 		
 		
 	}

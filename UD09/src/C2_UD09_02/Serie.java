@@ -1,8 +1,10 @@
 package C2_UD09_04;
 
-public class Serie implements Entregable{
+import java.lang.Comparable;
+
+public class Serie implements Entregable, Comparable<Serie>{
 	private String titulo;
-	private double numeroTemporadas=3;
+	private int numeroTemporadas=3;
 	private boolean entregado=false;
 	private String genero;
 	private String creador;
@@ -47,15 +49,10 @@ public class Serie implements Entregable{
 		
 		
 	}
-
+	//Método compareTo que va restando hasta tener 0 series
 	public int compareTo(Serie obj) {
-		if(this.numeroTemporadas<obj.numeroTemporadas){
-			return -1;
-		}else if(this.numeroTemporadas==obj.numeroTemporadas){
-			return 0;
-		}else{
-			return 1;
-		}
+		return (int)(this.numeroTemporadas - obj.numeroTemporadas);
+		
 	}
 	
 	//Setters y getters de todos los atributos
@@ -68,6 +65,7 @@ public class Serie implements Entregable{
 	public double getNumeroTemporadas() {
 		return numeroTemporadas;
 	}
+	
 	public void setNumeroTemporadas(int numeroTemporadas) {
 		this.numeroTemporadas = numeroTemporadas;
 	}
@@ -83,11 +81,13 @@ public class Serie implements Entregable{
 	public void setCreador(String creador) {
 		this.creador = creador;
 	}
-
-	//Método toString sobreescrito
+	
+	//Metodo toString sobreescrito
 	@Override
 	public String toString() {
-		return "Serie [titulo=" + titulo + ", numeroTemporadas=" + numeroTemporadas + ", entregado=" + entregado
-				+ ", genero=" + genero + ", creador=" + creador + "]";
+		return "Titulo: " + titulo + ", Numero de temporadas: " + numeroTemporadas + ", entregado: " + entregado
+				+ ", genero: " + genero + ", creador: " + creador;
 	}
+
+	
 }
