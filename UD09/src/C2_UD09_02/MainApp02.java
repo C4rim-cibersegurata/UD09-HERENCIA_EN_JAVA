@@ -1,4 +1,4 @@
-package C2_UD09_04;
+package C2_UD09_02;
 import java.util.Arrays;
 
 public class MainApp02 {
