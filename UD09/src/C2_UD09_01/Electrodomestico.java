@@ -1,18 +1,14 @@
 package C2_UD09_01;
 
-public class Electrodomestico {
+public class Electrodomestico implements HomeAppliancable {
 
-	protected double price;
-	private String color;
-	private char electricConsum;
-	private double weigth;
+	protected double price = 100;
+	private String color = "white";
+	private char electricConsum = 'F';
+	private double weigth = 5;
+	private final String electricConsumChain = "ABCDEF";
 	
 	public Electrodomestico() {
-		
-		setPrice();
-		setColor();
-		setElectricConsum();
-		setWeigth();
 		
 		precioFinal();
 		
@@ -21,8 +17,6 @@ public class Electrodomestico {
 	public Electrodomestico(double price, double weigth) {
 		
 		this.price = price;
-		setColor();
-		setElectricConsum();
 		this.weigth = weigth;
 		
 		precioFinal();
@@ -32,17 +26,11 @@ public class Electrodomestico {
 	public Electrodomestico(double price, String color, char electricConsum, double weigth) {
 		
 		this.price = price;
-		comporbarColor(color);
+		comprobarColor(color);
 		comprobarConsumoEnergetico(electricConsum);
 		this.weigth = weigth;
 		
 		precioFinal();
-		
-	}
-
-	public void setPrice() {
-		
-		this.price = 100;
 		
 	}
 	
@@ -76,17 +64,17 @@ public class Electrodomestico {
 				
 		}
 		
-		double tamano = (int)this.weigth;
+		double peso = (int)this.weigth;
 		
-		if (tamano < 20) {
+		if (peso < 20) {
 			
 			precioExtra += 10;
 			
-		} else if (tamano < 50) {
+		} else if (peso < 50) {
 			
 			precioExtra += 50;
 			
-		} else if (tamano < 80) {
+		} else if (peso < 80) {
 			
 			precioExtra += 80;
 			
@@ -99,50 +87,26 @@ public class Electrodomestico {
 		this.price += precioExtra;
 		
 	}
-
-	public void setColor() {
-		
-		this.color = "blanco";
-		
-	}
 	
-	public void comporbarColor(String color) {
+	public void comprobarColor(String color) {
 		
 		if (color.equalsIgnoreCase("blanco") || color.equalsIgnoreCase("negro") || color.equalsIgnoreCase("rojo")
 				|| color.equalsIgnoreCase("azul") || color.equalsIgnoreCase("gris")) {
 		
 			this.color = color.toLowerCase();
 		
-		} else {
-			
-			setColor();
-			
-		}
-		
-	}
-
-	public void setElectricConsum() {
-		
-		this.electricConsum = 'F';
+		} 
 		
 	}
 	
 	public void comprobarConsumoEnergetico(char electricConsum) {
 		
-		if (((int)electricConsum >= 65 && (int)electricConsum <= 70)) {
+		if (electricConsumChain.matches(electricConsumChain)) {
 			
 			this.electricConsum = electricConsum;
 			
-		} else {
-			
-			setElectricConsum();
-			
 		}
 		
-	}
-
-	public void setWeigth() {
-		this.weigth = 5;
 	}
 
 	public double getPrice() {
