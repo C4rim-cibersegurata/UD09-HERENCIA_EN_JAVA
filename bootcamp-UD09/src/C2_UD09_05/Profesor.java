@@ -40,7 +40,9 @@ public class Profesor extends ListaAsistencia {
 	public String getMateria() {
 		return materia;
 	}
-
+	public String getNombre() {
+		return nombre;
+	}
 	public boolean asistencia() {// probabilidad del 20% de faltar a clase
 		Random rand = new Random();
 		return rand.nextInt(100) >= 20 ? true : false;
