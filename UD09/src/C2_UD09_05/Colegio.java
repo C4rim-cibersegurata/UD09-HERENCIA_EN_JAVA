@@ -25,17 +25,17 @@ public class Colegio {
 	// iniciar alumnos
 	public static Estudiantes[] iniciarEstudiantes() {
 		Random rand = new Random();
-		Estudiantes[] estudiante = new Estudiantes[3];
 		String[] noms = { "Juan", "Jaime", "Pedro", "Isma", "Andrés", "Laura", "Marta", "Leonardo", "Laia", "Ariadna",
 				"Josefina", "Miriam", "Pablo", "Fatima" };
 		String sex;
+		Estudiantes[] estudiante = new Estudiantes[noms.length];
 		for (int i = 0; i < noms.length; i++) {
 			if (rand.nextInt(2) == 0) {
 				sex = "Hombre";
 			} else {
 				sex = "Mujer";
 			}
-			estudiante[0] = new Estudiantes(noms[i], (rand.nextInt(17 - 13) + 13), sex, (rand.nextInt(11)));
+			estudiante[i] = new Estudiantes(noms[i], (rand.nextInt(17 - 13) + 13), sex, (rand.nextInt(11)));
 		}
 		return estudiante;
 	}
@@ -60,4 +60,3 @@ public class Colegio {
 	};
 
 }
-
