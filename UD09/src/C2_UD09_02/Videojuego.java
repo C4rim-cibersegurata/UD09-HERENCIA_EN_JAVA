@@ -1,6 +1,8 @@
-package C2_UD09_04;
+package C2_UD09_02;
 
-public class Videojuego implements Entregable {
+import java.lang.Comparable;
+
+public class Videojuego implements Entregable, Comparable<Videojuego>{
 	private String titulo;
 	private double horasEstimadas;
 	private boolean entregado=false;
@@ -45,19 +47,12 @@ public class Videojuego implements Entregable {
 		}
 	}
 	
-
-
-		public String compareTo(Object obj) {
-			/*double resultado=0;
-			Videojuego videojuego =(Videojuego)obj;
-			if(this.horasEstimadas<videojuego.horasEstimadas) {
-				resultado=videojuego.horasEstimadas;
-				return resultado;
-			}else {
-				return this.horasEstimadas;
-			}*/
-			return "";
-		}
+	//Método compareTo que va restando hasta tener 0 videojuegos
+	public int compareTo(Videojuego obj) {
+		
+		return (int)(this.horasEstimadas - obj.horasEstimadas);
+		
+	}
 
 	//Getters y setters de todos los atributos except engtregado
 	public String getTitulo() {
@@ -94,8 +89,8 @@ public class Videojuego implements Entregable {
 	//Metodo toString sobreescrito
 	@Override
 	public String toString() {
-		return "Videojuego [titulo=" + titulo + ", horasEstimadas=" + horasEstimadas + ", entregado=" + entregado
-				+ ", genero=" + genero + ", compañia=" + compañia + "]";
+		return "Titulo: " + titulo + ", Horas estimadas: " + horasEstimadas + ", Entregado: " + entregado
+				+ ", Genero: " + genero + ", Compañia: " + compañia;
 	}
 	
 
