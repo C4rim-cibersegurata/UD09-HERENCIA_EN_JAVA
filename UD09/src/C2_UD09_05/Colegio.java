@@ -30,11 +30,11 @@ public class Colegio {
 		String sex;
 		Estudiantes[] estudiante = new Estudiantes[noms.length];
 		for (int i = 0; i < noms.length; i++) {
-			if (rand.nextInt(2) == 0) {
+			if (rand.nextInt(3) == 0) {
 				sex = "Hombre";
-			} else {
+			} else if (rand.nextInt(3) == 1) {
 				sex = "Mujer";
-			}
+			} else {sex = "Otro";}
 			estudiante[i] = new Estudiantes(noms[i], (rand.nextInt(17 - 13) + 13), sex, (rand.nextInt(11)));
 		}
 		return estudiante;
@@ -45,16 +45,15 @@ public class Colegio {
 		Profesor objProf = new Profesor();
 		for (int i = 0; i < iniciarProfes().length; i++) {
 			for (int j = 0; j < iniciarAulas().length; j++) {
-				if (objProf.asistencia()) {
-					//System.out.println("Hoy hay clase de ");
+				//if (objProf.asistencia()) {
 					if (profes[i].toString().contains(aula[j].getMateria())) {//index of para ver si el getmateria de aulas esta en el toString de profes
-						if (aula[j].hayClase(profes[i], estudiantes)) {
+						if (!aula[j].hayClase(profes[i], estudiantes)) {
 							System.out.println(profes[i].toString()+"  "+aula[j].getMateria());
 						} else {
-							System.out.println("No hay clases de ");
+							System.out.println("No hay clases de " + profes[i].getMateria());
 						}
 					}
-				}
+				//}
 			}
 		}
 	};
