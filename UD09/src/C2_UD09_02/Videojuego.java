@@ -1,22 +1,33 @@
-package C2_UD09_04;
+package C2_UD09_02;
 
 import java.lang.Comparable;
 
 public class Videojuego implements Entregable, Comparable<Videojuego>{
 	private String titulo;
 	private double horasEstimadas;
-	private boolean entregado=false;
+	private boolean entregado;
 	private String genero;
 	private String compañia;
+	//Constantes
+	private final double HORASESTIMADAS=10;
+	private final boolean ENTREGADO=false;
 	
 	//Constructor por defecto
-	public Videojuego() {		
+	public Videojuego() {	
+		this.titulo="";
+		this.horasEstimadas=HORASESTIMADAS;
+		this.genero="";
+		this.compañia="";
+		this.entregado=ENTREGADO;
 	}
 	//Constructor titulo y horas estimadas.
 
 	public Videojuego(String titulo, double horasEstimadas) {
-		this.titulo = titulo;
-		this.horasEstimadas = horasEstimadas;
+		this.titulo = "";
+		this.horasEstimadas = 0;
+		this.entregado=ENTREGADO;
+		this.horasEstimadas=HORASESTIMADAS;
+
 	}
 	//Constructor con todos los atributos
 	public Videojuego(String titulo, double horasEstimadas, String genero, String compañia) {
@@ -24,6 +35,7 @@ public class Videojuego implements Entregable, Comparable<Videojuego>{
 		this.horasEstimadas = horasEstimadas;
 		this.genero = genero;
 		this.compañia = compañia;
+		this.entregado=ENTREGADO;
 	}
 	
 	//Método para entregar videojuegos
@@ -47,10 +59,10 @@ public class Videojuego implements Entregable, Comparable<Videojuego>{
 		}
 	}
 	
-	//Método compareTo que va restando hasta tener 0 videojuegos
+	//Método compareTo
 	public int compareTo(Videojuego obj) {
-		
-		return (int)(this.horasEstimadas - obj.horasEstimadas);
+
+		return (int) (this.horasEstimadas - obj.horasEstimadas);
 		
 	}
 

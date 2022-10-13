@@ -1,23 +1,31 @@
-package C2_UD09_04;
+package C2_UD09_02;
 
 import java.lang.Comparable;
 
 public class Serie implements Entregable, Comparable<Serie>{
 	private String titulo;
 	private int numeroTemporadas=3;
-	private boolean entregado=false;
+	private boolean entregado;
 	private String genero;
 	private String creador;
-	
+	//Constantes
+	private final int NUMEROTEMPORADAS=3;
+	private final boolean ENTREGADO=false;
 
 	//Constructor por defecto
 	public Serie() {
-		
+		this.titulo="";
+		this.numeroTemporadas=NUMEROTEMPORADAS;
+		this.genero="";
+		this.creador="";
+		this.entregado=ENTREGADO;
 	}
 	//Constructor con el titulo y creador
 	public Serie(String titulo,String creador) {
 		this.titulo=titulo;
 		this.creador=creador;
+		this.numeroTemporadas=NUMEROTEMPORADAS;
+		this.entregado=ENTREGADO;
 	}
 	//Constructor con todos los atributos
 	public Serie(String titulo,int numeroTemporadas,String genero,String creador) {
@@ -25,6 +33,7 @@ public class Serie implements Entregable, Comparable<Serie>{
 		this.numeroTemporadas=numeroTemporadas;
 		this.genero=genero;
 		this.creador=creador;
+		this.entregado=ENTREGADO;
 	}
 	
 	//Método para entregar series
@@ -49,7 +58,7 @@ public class Serie implements Entregable, Comparable<Serie>{
 		
 		
 	}
-	//Método compareTo que va restando hasta tener 0 series
+	//Método compareTo
 	public int compareTo(Serie obj) {
 		return (int)(this.numeroTemporadas - obj.numeroTemporadas);
 		
