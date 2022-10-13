@@ -33,21 +33,17 @@ public class Estudiantes extends ListaAsistencia {
 
 	}
 
-	
 	public String getNombre() {
 		return nombre;
 	}
-
 
 	public int getEdad() {
 		return edad;
 	}
 
-
 	public String getSexo() {
 		return sexo;
 	}
-
 
 	public int getNota() {
 		return nota;

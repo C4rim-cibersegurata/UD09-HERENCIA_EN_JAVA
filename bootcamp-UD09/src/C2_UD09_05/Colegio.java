@@ -47,39 +47,42 @@ public class Colegio {
 		// for por cada genero con un if que compruebe la nota
 		// y otro que compruebe el genero para imprimir nombre y nota
 		System.out.println("--------------------------------------------------");
-		System.out.println("Hoy hay clase de "+aula.getMateria()+" con "+profes.getNombre());
+		System.out.println("Hoy hay clase de " + aula.getMateria() + " con " + profes.getNombre());
 		System.out.println("--------------------------------------------------");
 		System.out.println("                    Alumnos                       ");
 		System.out.println("Hombres aprobados: ");
-		for (int i = 0; i <aula.getMaxEstudiantes(); i++) {//para hombres
-			if (estudiantes[i].getSexo().equalsIgnoreCase("hombre") && estudiantes[i].getNota()>=5) {
-				System.out.println(estudiantes[i].getNombre()+" de "+estudiantes[i].getEdad()+" años tiene un "+estudiantes[i].getNota());
+		for (int i = 0; i < aula.getMaxEstudiantes(); i++) {// para hombres
+			if (estudiantes[i].getSexo().equalsIgnoreCase("hombre") && estudiantes[i].getNota() >= 5) {
+				System.out.println(estudiantes[i].getNombre() + " de " + estudiantes[i].getEdad() + " años tiene un "
+						+ estudiantes[i].getNota());
 			}
 		}
 		System.out.println("\nMujeres aprobadas: ");
-		for (int i = 0; i <aula.getMaxEstudiantes(); i++) {//para mujeres
-			if (estudiantes[i].getSexo().equalsIgnoreCase("Mujer") && estudiantes[i].getNota()>=5) {
-				System.out.println(estudiantes[i].getNombre()+" de "+estudiantes[i].getEdad()+" años tiene un "+estudiantes[i].getNota());
+		for (int i = 0; i < aula.getMaxEstudiantes(); i++) {// para mujeres
+			if (estudiantes[i].getSexo().equalsIgnoreCase("Mujer") && estudiantes[i].getNota() >= 5) {
+				System.out.println(estudiantes[i].getNombre() + " de " + estudiantes[i].getEdad() + " años tiene un "
+						+ estudiantes[i].getNota());
 			}
 		}
 		System.out.println("\nOtros aprobados: ");
-		for (int i = 0; i <aula.getMaxEstudiantes(); i++) {//para otros
-			if (estudiantes[i].getSexo().equalsIgnoreCase("otro") && estudiantes[i].getNota()>=5) {
-				System.out.println(estudiantes[i].getNombre()+" de "+estudiantes[i].getEdad()+" años tiene un "+estudiantes[i].getNota());
+		for (int i = 0; i < aula.getMaxEstudiantes(); i++) {// para otros
+			if (estudiantes[i].getSexo().equalsIgnoreCase("otro") && estudiantes[i].getNota() >= 5) {
+				System.out.println(estudiantes[i].getNombre() + " de " + estudiantes[i].getEdad() + " años tiene un "
+						+ estudiantes[i].getNota());
 			}
 		}
 		System.out.println("--------------------------------------------------");
 	}
 
 	public static void claseHoy(Profesor profes[], Aulas aula[], Estudiantes estudiantes[]) {
-		//Profesor objProf = new Profesor();
+		// Profesor objProf = new Profesor();
 		for (int i = 0; i < iniciarProfes().length; i++) {
 			for (int j = 0; j < iniciarAulas().length; j++) {
 				if (profes[i].toString().contains(aula[j].getMateria())) {// index of para ver si el getmateria de aulas
 																			// esta en el toString de profes
 					if (!aula[j].hayClase(profes[i], estudiantes)) {
-						//System.out.println(profes[i].getNombre() + "  " + aula[j].getMateria());
-						mostrarAulas(profes[i],aula[j],estudiantes);
+						// System.out.println(profes[i].getNombre() + " " + aula[j].getMateria());
+						mostrarAulas(profes[i], aula[j], estudiantes);
 					} else {
 						System.out.println("Hoy no hay clases de " + profes[i].getMateria());
 					}
