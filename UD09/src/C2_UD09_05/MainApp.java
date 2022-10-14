@@ -4,15 +4,13 @@ public class MainApp {
 
 	public static void main(String[] args) {
 		/*
-		 * crear un objeto aula metodo que pasando todos los valores anteriores diga si
-		 * hay clase o no. Escogemos la aula(clase) que toca con random o el calendario.
-		 * entonces comprobamos si el profesor concuerda con la clase metodo
-		 * asistencia() metodo crear aulas con id
+		 * Programa para representar una aula con un profesor y sus estudiantes
+		 * El objetivo es mostrar los alumnos aprobados separados por genero para las clases 
+		 * que se dan en cada ejecución
 		 */
-		Aulas[] aulas = Colegio.iniciarAulas();
+		Aulas[] aulas = Colegio.iniciarAulas();//inicializamos la aula, los profesores y los estudiantes
 		Profesor[] profes = Colegio.iniciarProfes();
 		Estudiantes[] estudiante = Colegio.iniciarEstudiantes();
-		// System.out.println(estudiante[4]);
 		Colegio.claseHoy(profes, aulas, estudiante);
 	}
 
