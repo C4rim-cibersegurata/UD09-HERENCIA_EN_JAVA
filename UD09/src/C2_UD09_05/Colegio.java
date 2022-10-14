@@ -26,12 +26,12 @@ public class Colegio {
 	public static Estudiantes[] iniciarEstudiantes() {
 		Random rand = new Random();
 		String[] noms = { "Juan", "Jaime", "Pedro", "Isma", "Andrés", "Laura", "Marta", "Leonardo", "Laia", "Ariadna",
-				"Josefina", "Miriam", "Pablo", "Fatima" };
+				"Josefina", "Miriam", "Pablo", "Fatima" };//los nombres de alumno se obtienen de esta lista
 		String sex;
 		Estudiantes[] estudiante = new Estudiantes[noms.length];
-		for (int i = 0; i < noms.length; i++) {
-			if (rand.nextInt(3) == 0) {
-				sex = "Hombre";
+		for (int i = 0; i < noms.length; i++) {//recorremos la lista de estudiantes y le asignamos el sexo, edad y nota de forma aleatoria
+			if (rand.nextInt(3) == 0) {//para obtener el sexo de forma aleatoria asignamos una opcion por cada valor de la función random
+				sex = "Hombre";	  // con el intervalo 0 a 2
 			} else if (rand.nextInt(3) == 1) {
 				sex = "Mujer";
 			} else {sex = "Otro";}
