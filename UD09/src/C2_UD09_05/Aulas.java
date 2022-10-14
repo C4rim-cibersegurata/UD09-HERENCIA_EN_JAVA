@@ -45,16 +45,15 @@ public class Aulas {
 		return MaxEstudiantes;
 	}
 	public boolean hayClase(Profesor profe, Estudiantes[] estudiantes) {
-		//if profe ha asistido, pasamos estudiantes  i con un for comprovamos por cada alumno si asistió
 		boolean asistenciaHoy=false;
-		if (profe.asistencia()) {
+		if (profe.asistencia()) {//En caso de que el profesor haya asistido
 			int alumnosPresentes = 0;
-			for(Estudiantes al : estudiantes) {
+			for(Estudiantes al : estudiantes) {//comprobaremos y contamos cuantos alumnos han asistido
 				if(al.asistencia()==true)
 					alumnosPresentes++;
 			}
-			int porcentajePresentes = alumnosPresentes*100/this.MaxEstudiantes;
-			if(porcentajePresentes>=50) {asistenciaHoy=true;}
+			int porcentajePresentes = alumnosPresentes*100/this.MaxEstudiantes;//calculamos el porcentaje
+			if(porcentajePresentes>=50) {asistenciaHoy=true;}//y si es igual o supera el  50% o el profesor no ha asistido devolvemos true
 		} else {asistenciaHoy=true;}
 		return asistenciaHoy;
 		}
